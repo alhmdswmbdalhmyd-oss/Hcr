@@ -1,1 +1,182 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d0a">
+  <meta name="description" content="NEXO HACKER - منصة الأمن السيبراني وتحليل الشبكات">
+  <title>NEXO HACKER | الأمن السيبراني</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#home" class="logo">NEXO <span>HACKER</span></a>
+    <button id="menuButton" class="menu-button" aria-label="فتح القائمة">☰</button>
+    <nav id="navigation">
+      <a href="#home">الرئيسية</a>
+      <a href="#tools">الأدوات</a>
+      <a href="#about">حول المنصة</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="eyebrow"><span class="live-dot"></span> منصة الأمن السيبراني</div>
+      <h1>مرحباً بك في <span>NEXO HACKER</span></h1>
+      <p>منصتك لتحليل الشبكات، وفحص إعدادات المواقع، واستخدام أدوات الأمن السيبراني في مكان واحد.</p>
+      <a href="#tools" class="primary-button">استكشف الأدوات <span>←</span></a>
+      <div class="terminal-preview">
+        <div class="terminal-head">
+          <div class="terminal-dots"><i></i><i></i><i></i></div>
+          <span>لوحة النظام</span>
+          <span class="terminal-state">جاهز</span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="prompt">nexo@security:~$</span> status</p>
+          <p class="terminal-green">تم تحميل واجهة المنصة بنجاح.</p>
+          <p><span class="prompt">nexo@security:~$</span> tools --list</p>
+          <p class="terminal-muted">بانتظار اختيار أداة...</p>
+          <span class="cursor"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span class="stat-icon">⌘</span>
+        <span class="stat-label">الأدوات المتاحة</span>
+        <strong id="toolCount">12</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon">◉</span>
+        <span class="stat-label">الفحوصات المنفذة</span>
+        <strong id="scanCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon">⬡</span>
+        <span class="stat-label">حالة الواجهة</span>
+        <strong class="small-value">جاهزة</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon">⌨</span>
+        <span class="stat-label">محرك Python</span>
+        <strong class="small-value" id="engineStatus">غير متصل</strong>
+      </article>
+    </section>
+
+    <section id="tools" class="tools-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">مركز الأدوات</span>
+          <h2>أدوات الأمن السيبراني</h2>
+          <p>اختر الأداة التي تريد استخدامها.</p>
+        </div>
+      </div>
+
+      <label class="search-box">
+        <span>⌕</span>
+        <input id="toolSearch" type="search" placeholder="ابحث عن أداة..." autocomplete="off">
+        <kbd>بحث</kbd>
+      </label>
+
+      <div class="categories" id="categories">
+        <button class="category active" data-category="الكل">الكل</button>
+        <button class="category" data-category="الشبكات">الشبكات</button>
+        <button class="category" data-category="المواقع">المواقع</button>
+        <button class="category" data-category="التشفير">التشفير</button>
+        <button class="category" data-category="الملفات">الملفات</button>
+        <button class="category" data-category="الجهاز">الجهاز</button>
+      </div>
+
+      <div id="toolsGrid" class="tools-grid">
+        <button class="tool-card" data-id="ip" data-category="الشبكات">
+          <span class="tool-icon">◎</span><span class="tool-tag">الشبكات</span>
+          <strong>معلومات IP</strong><span class="tool-description">عرض عنوان IP العام الذي يظهر للاتصال.</span>
+          <span class="tool-link">فتح الأداة ←</span>
+        </button>
+        <button class="tool-card" data-id="dns" data-category="الشبكات">
+          <span class="tool-icon">⌘</span><span class="tool-tag">الشبكات</span>
+          <strong>تحليل DNS</strong><span class="tool-description">استخراج سجلات DNS لنطاق تملكه أو لديك إذن بفحصه.</span>
+          <span class="tool-link">فتح الأداة ←</span>
+        </button>
+        <button class="tool-card" data-id="ping" data-category="الشبكات">
+          <span class="tool-icon">↗</span><span class="tool-tag">الشبكات</span>
+          <strong>اختبار الاتصال</strong><span class="tool-description">اختبار إمكانية الوصول إلى خادم.</span>
+          <span class="tool-link">فتح الأداة ←</span>
+        </button>
+        <button class="tool-card" data-id="website" data-category="المواقع">
+          <span class="tool-icon">◎</span><span class="tool-tag">المواقع</span>
+          <strong>فحص الموقع</strong><span class="tool-description">فحص حالة الموقع ورؤوس HTTP الأساسية.</span>
+          <span class="tool-link">فتح الأداة ←</span>
+        </button>
+        <button class="tool-card" data-id="tls" data-category="المواقع">
+          <span class="tool-icon">⬡</span><span class="tool-tag">المواقع</span>
+          <strong>فحص شهادة TLS</strong><span class="tool-description">التحقق من شهادة الاتصال الآمن.</span>
+          <span class="tool-link">فتح الأداة ←</span>
+        </button>
+        <button class="tool-card" data-id="headers" data-category="المواقع">
+          <span class="tool-icon">☷</span><span class="tool-tag">المواقع</span>
+          <strong>رؤوس الأمان</strong><span class="tool-description">مراجعة ترويسات الأمان في موقعك.</span>
+          <span class="tool-link">فتح الأداة ←</span>
+        </button>
+        <button class="tool-card" data-id="base64" data-category="التشفير">
+          <span class="tool-icon">⌗</span><span class="tool-tag">التشفير</span>
+          <strong>أداة Base64</strong><span class="tool-description">ترميز النصوص وفك ترميزها محلياً.</span>
+          <span class="tool-link">فتح الأداة ←</span>
+        </button>
+        <button class="tool-card" data-id="hash" data-category="التشفير">
+          <span class="tool-icon">#</span><span class="tool-tag">التشفير</span>
+          <strong>بصمة SHA-256</strong><span class="tool-description">إنشاء بصمة رقمية للنص أو الملف.</span>
+          <span class="tool-link">فتح الأداة ←</span>
+        </button>
+        <button class="tool-card" data-id="password" data-category="التشفير">
+          <span class="tool-icon">✳</span><span class="tool-tag">التشفير</span>
+          <strong>مولد كلمات المرور</strong><span class="tool-description">إنشاء كلمات مرور عشوائية قوية محلياً.</span>
+          <span class="tool-link">فتح الأداة ←</span>
+        </button>
+        <button class="tool-card" data-id="file" data-category="الملفات">
+          <span class="tool-icon">▤</span><span class="tool-tag">الملفات</span>
+          <strong>تحليل الملفات</strong><span class="tool-description">عرض نوع الملف وحجمه وبصمته الرقمية.</span>
+          <span class="tool-link">فتح الأداة ←</span>
+        </button>
+        <button class="tool-card" data-id="device" data-category="الجهاز">
+          <span class="tool-icon">▣</span><span class="tool-tag">الجهاز</span>
+          <strong>معلومات المتصفح</strong><span class="tool-description">عرض معلومات المتصفح والشاشة واللغة.</span>
+          <span class="tool-link">فتح الأداة ←</span>
+        </button>
+        <button class="tool-card" data-id="json" data-category="التشفير">
+          <span class="tool-icon">{ }</span><span class="tool-tag">التشفير</span>
+          <strong>محلل JSON</strong><span class="tool-description">تنسيق بيانات JSON والتحقق من صحتها.</span>
+          <span class="tool-link">فتح الأداة ←</span>
+        </button>
+      </div>
+      <p id="emptySearch" class="empty-message" hidden>لا توجد أدوات مطابقة لبحثك.</p>
+    </section>
+
+    <section id="about" class="about-section">
+      <span class="section-kicker">عن المشروع</span>
+      <h2>أدواتك في مكان واحد</h2>
+      <p>صُممت NEXO HACKER لتجميع أدوات تحليل الشبكات والمواقع والملفات في واجهة واحدة. بعض الوظائف تعمل داخل المتصفح، أما الفحوصات التي تحتاج إلى Python فتتطلب تشغيل الخادم وربط الواجهة به.</p>
+      <div class="security-note"><strong>ملاحظة أمنية</strong><p>استخدم أدوات الفحص على أجهزتك ومواقعك أو الأنظمة التي تملك تصريحاً باختبارها.</p></div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#home">الرئيسية</a>
+    <a href="#tools">الأدوات</a>
+    <span>© 2026 NEXO HACKER</span>
+  </footer>
+
+  <dialog id="toolDialog" class="tool-dialog">
+    <div class="dialog-header">
+      <h2 id="dialogTitle">الأداة</h2>
+      <button id="closeDialog" class="close-button" aria-label="إغلاق">✕</button>
+    </div>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
+
